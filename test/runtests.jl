@@ -1,8 +1,9 @@
-using CalibrationTargets.jl
+using CalibrationTargets
 using Test
 
+checkerboard(3,3);
+
+
 @testset "CalibrationTargets.jl" begin
-
-    include("runCheckerBoardTests.jl")
-
+    checkerboard(3,3);
 end

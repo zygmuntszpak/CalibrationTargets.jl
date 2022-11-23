@@ -21,5 +21,3 @@ function checkerboard(i,j)
     end
     guidict = imshow(a)
 end
-
-checkerboard(8,8)

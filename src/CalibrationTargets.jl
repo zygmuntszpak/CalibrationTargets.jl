@@ -1,5 +1,4 @@
 module CalibrationTargets
-
-export @checkerboard
-
+    include("CheckerBoard.jl");
+    export checkerboard
 end
