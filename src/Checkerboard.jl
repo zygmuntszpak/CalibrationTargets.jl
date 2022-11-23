@@ -1,3 +1,5 @@
+using ImageView, Images, TestImages
+
 function checkerboard(i,j)
     a = zeros(Int,i,j);
 
@@ -19,6 +21,5 @@ function checkerboard(i,j)
     end
     guidict = imshow(a)
 end
-
 
 checkerboard(8,8)

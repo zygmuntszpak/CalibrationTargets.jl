@@ -1,6 +1,8 @@
-using CalibrationTargets
+using CalibrationTargets.jl
 using Test
 
 @testset "CalibrationTargets.jl" begin
-    # Write your tests here.
+
+    include("runCheckerBoardTests.jl")
+
 end
