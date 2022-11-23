@@ -1,23 +1,24 @@
-using ImageView, Images, TestImages
+function checkerboard(nrow::Int, ncol::Int; square_size::Int = 50)
+    a = zeros(Bool, nrow, ncol)
 
-function checkerboard(i,j)
-    a = zeros(Int,i,j);
-
-    for i in range(1,stop=i);
+    for i in range(1, stop=nrow)
         #odd rows
         if mod(i,2) != 0
-            for j in range(1,stop=j)
+            for j in range(1,stop=ncol)
                 if mod(j,2) != 0
-                    a[i,j] = 1;
+                    a[i,j] = 1
                 end 
             end
         else 
-            for j in range(1,stop=j)
+            for j in range(1,stop=ncol)
                 if mod(j,2) == 0
-                    a[i,j] = 1;
+                    a[i,j] = 1
                 end
             end
         end
     end
-    guidict = imshow(a)
+
+    return Gray.(repeat(a, inner = (square_size, square_size)))
 end
+
+

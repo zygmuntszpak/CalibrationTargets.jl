@@ -1,4 +1,11 @@
 module CalibrationTargets
-    include("CheckerBoard.jl");
-    export checkerboard
+
+using ImageView
+using Images
+using TestImages
+
+
+include("checkerboard.jl");
+    
+export checkerboard
 end

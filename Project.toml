@@ -3,6 +3,11 @@ uuid = "10371a2c-3770-4a77-94b6-7f4dccfea131"
 authors = ["Zygmunt Szpak <zygmunt.szpak@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+ImageView = "86fae568-95e7-573e-a6b2-d8a6b900c9ef"
+Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
+TestImages = "5e47fb64-e119-507b-a336-dd2b206d9990"
+
 [compat]
 julia = "1"
 
