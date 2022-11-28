@@ -17,6 +17,3 @@ function generatepoints(nrow::Int, ncol::Int, square_size::Int)
     return points
 end
 
-a = generatepoints(8,8,10)
-
-display(a)
