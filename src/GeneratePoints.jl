@@ -1,8 +1,8 @@
 function generatepoints(nrow::Int, ncol::Int, square_size::Int)
     points = zeros(Int, (nrow-1)*(ncol-1), 2)
 
-    row = 1
-    col = 1
+    row = 0
+    col = 0
 
     for i in 1:((nrow-1)*(ncol-1))        
         points[i,1] = row*square_size
@@ -11,7 +11,7 @@ function generatepoints(nrow::Int, ncol::Int, square_size::Int)
 
         if mod(i,(ncol-1)) == 0 
             row = row + 1
-            col = 1
+            col = 0
         end
     end
     return points
