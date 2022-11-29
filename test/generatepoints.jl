@@ -11,22 +11,22 @@
     
     # Check First Point Is Correct
     points = generatepoints(8,8,10)
-    @test points[1,1] == 1*10
+    @test points[1,1] == (1-1)*10
 
     # Check Column Increments Correctly 
     points = generatepoints(8,8,10)
-    @test points[2,2] == 20
+    @test points[2,2] == (2-1)*10
 
     # Check X Coordinate Is Recorded Correctly For New Row
     points = generatepoints(8,8,10)
-    @test points[8,1] == 20
+    @test points[8,1] == (2-1)*10
 
     # Check Y Coordinate Is Recorded Correctly For New Row
     points = generatepoints(8,8,10)
-    @test points[8,2] == 10
+    @test points[8,2] == 0
 
     # Check Size of Square is Accounted correctly for
     points = generatepoints(8,8,5)
     square_size = 5
-    @test points[6,2] == square_size*6
+    @test points[6,2] == square_size*(6-1)
 end
