@@ -1,5 +1,5 @@
 function checkerboard(nrow::Int, ncol::Int; square_size::Int = 50)
-    a = zeros(Bool, nrow, ncol)
+    a = zeros(Int, nrow, ncol)
 
     for i in range(1, stop=nrow)
         #odd rows
