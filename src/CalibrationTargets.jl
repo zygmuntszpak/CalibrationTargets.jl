@@ -6,6 +6,7 @@ using TestImages
 using ImageTransformations
 using CoordinateTransformations
 using Rotations
+using ImageFiltering
 
 include("checkerboard.jl");
 include("GeneratePoints.jl")
