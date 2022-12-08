@@ -8,8 +8,11 @@ using CoordinateTransformations
 using Rotations
 using ImageFiltering
 
-include("checkerboard.jl");
+inlcude("createblur.jl")
+include("checkerboard.jl")
 include("GeneratePoints.jl")
+
+export createblur
 export generatepoints
 export checkerboard
 end
