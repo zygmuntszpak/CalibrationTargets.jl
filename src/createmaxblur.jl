@@ -6,5 +6,16 @@ function createmaxblur(img::Matrix{Gray{N0f8}})
     img_4 = createblur(img, (3*pi)/4)   # 135 degree rotation blur 
 
     # Creates a four dimensional array of these four imgs
-    combined_3d = cat(img_1,img_2,img_3,img_4; dims = 3);
+    layerd_3d = cat(img_1,img_2,img_3,img_4; dims = 3);
+
+    width, height, depth = sizeof(layerd_3d);
+
+    combined = zeros(size(img))
+    for i = 1:width
+        for j = 1:height
+            val = (maximum(layerd_3d[i,j,:]) - minimum(layerd_3d[i,j,:]))^2
+            combined[i,j] = val
+        end
+    end
+    return combined
 end

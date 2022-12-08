@@ -11,7 +11,9 @@ using ImageFiltering
 inlcude("createblur.jl")
 include("checkerboard.jl")
 include("GeneratePoints.jl")
+include("createmaxblur.jl")
 
+export createmaxblur
 export createblur
 export generatepoints
 export checkerboard
