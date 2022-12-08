@@ -10,6 +10,6 @@ using OffsetArrays
 
 img = checkerboard(8,8);
 
-blur_img = createblur(img,pi/2);
+blur_img = createblur(img,pi/1);
 
 display(blur_img)
