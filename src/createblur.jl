@@ -1,4 +1,4 @@
-function createblur(img::Matrix{Gray{N0f8}})
+function createblur(img::Matrix{Gray{N0f8}}, angle::Float64 )
 
     # define transformation
     trfm = recenter(RotMatrix(pi/4), center(img));
