@@ -5,10 +5,14 @@ function createmaxblur(img::Matrix{Gray{N0f8}})
     img_3 = createblur(img, pi/2);      # 90 degree rotation blur  
     img_4 = createblur(img, (3*pi)/4)   # 135 degree rotation blur 
 
+    angles = deg2rad.([0, 45, 90, 135])
+    images = [createblur(img, angle) for angle in angles]
+    layerd_3d = cat(images...; dims = 3)
+
     # Creates a four dimensional array of these four imgs
     layerd_3d = cat(img_1,img_2,img_3,img_4; dims = 3);
 
-    width, height, depth = sizeof(layerd_3d);
+    width, height, depth = size(layerd_3d);
 
     combined = zeros(size(img))
     for i = 1:width

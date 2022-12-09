@@ -7,8 +7,9 @@ using ImageTransformations
 using CoordinateTransformations
 using Rotations
 using ImageFiltering
+using Interpolations
 
-inlcude("createblur.jl")
+include("createblur.jl")
 include("checkerboard.jl")
 include("GeneratePoints.jl")
 include("createmaxblur.jl")
