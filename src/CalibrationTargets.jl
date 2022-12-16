@@ -9,13 +9,14 @@ using Rotations
 using ImageFiltering
 using Interpolations
 
-include("createblur.jl")
+include("create_blur.jl")
 include("checkerboard.jl")
-include("GeneratePoints.jl")
-include("createmaxblur.jl")
+include("generate_points.jl")
+include("create_max_blur.jl")
 
 export createmaxblur
 export createblur
 export generatepoints
 export checkerboard
+
 end
