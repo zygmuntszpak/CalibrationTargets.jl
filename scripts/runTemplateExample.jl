@@ -70,8 +70,8 @@ out = pick_maximum_response(responses)
 imshow(template_cb)
 
 # Notice how the corner points have the largest values
+out = non_max_supress(out)
 imshow(out)
-
 
 # Run this to stretch the contrast so that everything is brigher (for debugging)
 #adjust_histogram(Gray.(out₁), LinearStretching())
