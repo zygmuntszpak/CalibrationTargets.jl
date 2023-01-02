@@ -89,6 +89,7 @@ responses = cat(out₁; dims = 3)
 out = pick_maximum_response(responses)
 # Apply the inverse warp to bring the image back to its original pose
 fimg = warp(out,inv(trfm));
+out = non_max_supress(out)
 imshow(out)
 
 
