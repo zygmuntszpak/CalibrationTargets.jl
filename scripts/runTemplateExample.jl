@@ -70,7 +70,7 @@ out = pick_maximum_response(responses)
 imshow(template_cb)
 
 # Notice how the corner points have the largest values
-out = remove_under_threshold(out, 0.4)
+out = non_max_supress(out, 0.4)
 imshow(out)
 
 # Run this to stretch the contrast so that everything is brigher (for debugging)
@@ -89,7 +89,7 @@ responses = cat(out₁; dims = 3)
 out = pick_maximum_response(responses)
 # Apply the inverse warp to bring the image back to its original pose
 fimg = warp(out,inv(trfm));
-out = remove_under_threshold(out, 0.4)
+out = non_max_supress(out, 0.4)
 imshow(out)
 
 

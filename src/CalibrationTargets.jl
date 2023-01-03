@@ -13,12 +13,12 @@ include("create_blur.jl")
 include("checkerboard.jl")
 include("generate_points.jl")
 include("create_max_blur.jl")
-include("remove_under_threshold.jl")
+include("non_max_supress.jl")
 
 export createmaxblur
 export createblur
 export generatepoints
 export checkerboard
-export remove_under_threshold
+export non_max_supress
 
 end
