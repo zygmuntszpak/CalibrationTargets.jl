@@ -1,7 +1,7 @@
 function non_max_supress(img::AbstractArray, quality::Float64, min_dist::Int )      # A further addition could be to state how many "good" corners you wish to remain in the image
     m, n = size(img)                                                        # Also need to ensure that there is valid 0-1 input
 
-    points = zeros(Int, 2)
+    points = [] # THIS IS MAKING ERROR (How to define a 2d array of unkown size with 2 cols)
     counter = 1
     for i in range(1, stop=m)
         for j in range(1, stop=n)
