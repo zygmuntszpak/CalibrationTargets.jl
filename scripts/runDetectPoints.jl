@@ -7,14 +7,10 @@ using ImageTransformations
 using CoordinateTransformations
 using Rotations
 
-# img = checkerboard(8,8)
-# out = detect_points(img)
-# imshow(out)
+img = checkerboard(8,8)
+out = detect_points(img, 0.4, 10)
+imshow(out)
 
-# img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
-# out2 = detect_points(img2)
-# imshow(out2)
-
-img3 = Gray{Float64}.(load("data/checkerboard1.png"))
-out3 = detect_points(img4, 0.25, 10)
-imshow(out4)
+img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
+out2 = detect_points(img2, 0.4, 10)
+imshow(out2)
