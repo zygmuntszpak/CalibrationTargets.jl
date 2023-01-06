@@ -1,4 +1,4 @@
-function detect_points(img::AbstractArray)
+function detect_points(img::AbstractArray, quality::Number, min_dist::Int )
     
     main = Gray{Float64}.(img)
     template_cb = Float64.(checkerboard(2,2 ; square_size = 5)) 
@@ -18,7 +18,7 @@ function detect_points(img::AbstractArray)
     # Fimg = warp(out,inv(trfm));
    
    
-    out = non_max_supress(out, 0.4, 10)
-    imshow(out) 
+    out = non_max_supress(out, quality, min_dist)
+    return out
 end
 
