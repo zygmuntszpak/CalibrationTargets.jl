@@ -17,9 +17,11 @@ include("pick_maximum_response.jl")
 include("template.jl")
 include("non_max_supress.jl")
 include("detect_points.jl")
+include("construct_mask.jl")
 
 export Template     # Template struct
 
+export construct_sectors
 export detect_points
 export createmaxblur
 export createblur
