@@ -7,5 +7,5 @@ using ImageTransformations
 using CoordinateTransformations
 using Rotations
 
-img = construct_sectors(5,50)
+img = construct_sectors(0,45)
 imshow(img)
