@@ -7,9 +7,9 @@ using ImageTransformations
 using CoordinateTransformations
 using Rotations
 
-img = checkerboard(8,8)
-out = detect_points(img, 0.4, 15)
-imshow(out)
+#img = checkerboard(8,8)
+#out = detect_points(img, 0.4, 15)
+#imshow(out)
 
 img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
 out2 = detect_points(img2, 0.45, 10)
