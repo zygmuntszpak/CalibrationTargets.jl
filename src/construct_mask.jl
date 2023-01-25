@@ -1,6 +1,6 @@
 # 0 <= squeeing_angle < 45
 # 0 <= rotation_angle <= 180
-function construct_sectors(squeezing_angle::Real = 0, rotation_angle::Real = 0; dim::Int = 9)
+function construct_sectors(squeezing_angle::Real = 0, rotation_angle::Real = 0; dim::Int = 29)
     ρ = squeezing_angle
     α = rotation_angle
     !(0 <= ρ < 45) ? throw(ArgumentError("You squeezing_angle must lie in the interval [0,45).")) : nothing
