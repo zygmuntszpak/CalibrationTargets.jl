@@ -22,5 +22,5 @@ imshow(imgw)
  imgw2 = warp(img2, trfm2);
  imshow(imgw2)
 
- out2 = detect_points(imgw2, 0.45, 15)
+ out2 = detect_points(imgw2, 0.475, 15)
  imshow(out2)

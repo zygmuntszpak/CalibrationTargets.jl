@@ -18,9 +18,11 @@ include("template.jl")
 include("non_max_supress.jl")
 include("detect_points.jl")
 include("construct_mask.jl")
+include("gradient_carving_elimination.jl")
 
 export Template     # Template struct
 
+export gradient_carving_elimination
 export construct_sectors
 export detect_points
 export createmaxblur
