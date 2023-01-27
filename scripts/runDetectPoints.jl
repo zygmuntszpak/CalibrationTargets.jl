@@ -27,10 +27,26 @@ binary = out2 .> 0.0
 
 detected_points = Vector{CartesianIndex{2}}()
 
-# Filter out points under threshold and store candidates
-for i in CartesianIndices(binary)
-    if binary[i] > 0.0
-        push!(detected_points, i)
+threshold = 0.15
+
+# Iterate through each pixel in the image
+for i in 1:size(mag, 1)
+    for j in 1:size(mag, 2)
+        
+        # Check if pixel value is below threshold
+        if mag[i, j] < threshold
+            # If below threshold, set pixel value to 0
+            mag[i, j] = 0
+        end
     end
 end
-imshow(mag + binary)
+
+# Show the final image
+imshow(mag)
+
+
+# non_max_supress(mag)
+    
+
+
+
