@@ -6,47 +6,32 @@ using ImageView
 using ImageTransformations
 using CoordinateTransformations
 using Rotations
+using Statistics
 
-#img = checkerboard(8,8)
-#out = detect_points(img, 0.4, 15)
-#imshow(out)
 
-img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
+#img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
+ img2 = Gray{Float64}.(load("data/checkerboard2.png"))
 
-#img2 = Gray{Float64}.(load("data/radial_distortion.png"))
-out2 = detect_points(img2, 0.475, 10)
-imshow(out2)
-
-imshow(img2)
-
-kernelfunc = KernelFactors.scharr
-Gy, Gx = imgradients(img2,kernelfunc, "replicate");
-mag = sqrt.(Gy.^2 + Gx.^2)
-
-binary = out2 .> 0.0
+out2 = detect_points(img2, 0.2, 10)
 
 detected_points = Vector{CartesianIndex{2}}()
 
-threshold = 0.15
-
-# Iterate through each pixel in the image
-for i in 1:size(mag, 1)
-    for j in 1:size(mag, 2)
-        
-        # Check if pixel value is below threshold
-        if mag[i, j] < threshold
-            # If below threshold, set pixel value to 0
-            mag[i, j] = 0
-        end
+# Store candidates
+for i in CartesianIndices(out2)
+    if out2[i] > 0.0
+        push!(detected_points, i)
     end
 end
 
-# Show the final image
-imshow(mag)
 
+points = median_dist_elim(detected_points, 0.2)
 
-# non_max_supress(mag)
-    
+differences = setdiff(detected_points, points)
 
+for point in differences
+    x = point[1]
+    y = point[2]
+    out2[x,y] = 0
+end
 
-
+imshow(out2)

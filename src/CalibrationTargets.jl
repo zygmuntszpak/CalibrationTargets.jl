@@ -7,6 +7,7 @@ using ImageTransformations
 using CoordinateTransformations
 using Rotations
 using ImageFiltering
+using Statistics
 using Interpolations
 
 include("create_blur.jl")
@@ -19,9 +20,11 @@ include("non_max_supress.jl")
 include("detect_points.jl")
 include("construct_mask.jl")
 include("gradient_carving_elimination.jl")
+include("median_dist_elim.jl")
 
 export Template     # Template struct
 
+export median_dist_elim
 export gradient_carving_elimination
 export construct_sectors
 export detect_points
