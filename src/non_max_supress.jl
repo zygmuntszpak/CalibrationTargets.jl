@@ -10,8 +10,7 @@ function non_max_supress!(img::AbstractArray, quality::Number, min_dist::Int )
             push!(corner_candidates, i)
         end
     end
-    @show length(corner_candidates)
-
+    
     # # Filtering out points not maximum in its local pixel area
      for i in range(1, stop = length(corner_candidates) - 1)
         for j in range(i + 1, stop = length(corner_candidates))
