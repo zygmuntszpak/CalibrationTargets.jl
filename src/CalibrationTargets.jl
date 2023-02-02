@@ -22,8 +22,10 @@ include("construct_mask.jl")
 include("gradient_carving_elimination.jl")
 include("median_dist_elim.jl")
 include("checkerboard_points.jl")
-export Template     # Template struct
+include("seam_carving.jl")
 
+export Template     # Template struct
+export seam_carving!
 export checkerboard_points
 export median_dist_elim
 export gradient_carving_elimination
