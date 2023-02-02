@@ -5,7 +5,7 @@ function seam_carving!(A::AbstractArray, i::Int64, j::Int64)
 
     while (curr[1] <= row)
         x, y = curr[1], curr[2]
-        A[x,y] = 10
+        A[x,y] = 1
         if x + 1 > row 
             break
         end
