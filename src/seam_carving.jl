@@ -1,11 +1,12 @@
-function seam_carving!(A::AbstractArray)
+function seam_carving!(A::AbstractArray, i::Int64, j::Int64)
 
-    global curr = [1,1]
+    global curr = [i,j]
+    row, col = size(A)
 
-    while (curr[1] <= 5)
+    while (curr[1] <= row)
         x, y = curr[1], curr[2]
         A[x,y] = 10
-        if x + 1 == 6 
+        if x + 1 > row 
             break
         end
         max_next = -Inf
@@ -15,7 +16,7 @@ function seam_carving!(A::AbstractArray)
                 curr = [x+1,y-1]
             end
         end
-        if y + 1 < 6 
+        if y + 1 <= col
             if A[x+1,y+1] > max_next
                 max_next = A[x+1,y+1]    
                 curr = [x+1,y+1]
