@@ -31,5 +31,5 @@ for i in CartesianIndices(detected_points)
 end
 
 
-seam_carving_up!(mag, 216, 285)
+seam_carving_down!(mag, conrner_candiates)
 imshow(mag + binary)
