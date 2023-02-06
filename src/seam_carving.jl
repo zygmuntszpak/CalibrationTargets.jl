@@ -8,6 +8,9 @@ function seam_carving_down!(A::AbstractArray, points::Vector{CartesianIndex{2}},
         curr = [x₁, y₁]
         while (curr[1] <= row)
             x, y = curr[1], curr[2]
+            if A[x,y] < 0.0025
+                break
+            end
             A[x,y] = 1
             for diff in -10:10
                 if haskey(map,  CartesianIndex(x,y + diff))
@@ -79,3 +82,5 @@ function seam_carving_up!(A::AbstractArray, points::Vector{CartesianIndex{2}}, m
         end
     end
 end
+
+
