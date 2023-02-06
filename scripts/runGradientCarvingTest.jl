@@ -27,5 +27,5 @@ for i in CartesianIndices(detected_points)
         push!(conrner_candiates, i)
     end
 end
-seam_carving!(mag, 216, 285)
+seam_carving_up!(mag, 216, 285)
 imshow(mag + binary)
