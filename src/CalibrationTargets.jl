@@ -23,10 +23,12 @@ include("gradient_carving_elimination.jl")
 include("median_dist_elim.jl")
 include("checkerboard_points.jl")
 include("seam_carving.jl")
+include("find_points.jl")
 
 export Template     # Template struct
 export seam_carving_down!
 export seam_carving_up!
+export find_points
 export remove_after_carve
 export checkerboard_points
 export median_dist_elim

@@ -8,8 +8,8 @@ using CoordinateTransformations
 using Rotations
 
 #img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
-img2 = Gray{Float64}.(load("data/checkerboard2.png"))
-detected_points = detect_points(img2,0.2,10)
+img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
+detected_points = detect_points(img2,0.48,10)
 imshow(detected_points)
 
 imshow(img2)
@@ -38,6 +38,6 @@ differences = setdiff(conrner_candiates, final_points)
 for point in differences
        x = point[1]
     y = point[2]
-    binary[x,y] = 0
+    detected_points[x,y] = 0
 end
-imshow(binary)
+imshow(binary + mag)
