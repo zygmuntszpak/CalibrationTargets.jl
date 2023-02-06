@@ -27,6 +27,7 @@ include("seam_carving.jl")
 export Template     # Template struct
 export seam_carving_down!
 export seam_carving_up!
+export remove_after_carve
 export checkerboard_points
 export median_dist_elim
 export gradient_carving_elimination
