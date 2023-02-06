@@ -21,7 +21,6 @@ mag = sqrt.(Gy.^2 + Gx.^2)
 binary = detected_points .> 0.0
 conrner_candiates = Vector{CartesianIndex{2}}()
 map = Dict{CartesianIndex{2}, Int64}()
-    
 # Store candidates
 for i in CartesianIndices(detected_points)
     if detected_points[i] > 0.0
@@ -31,5 +30,6 @@ for i in CartesianIndices(detected_points)
 end
 
 
-seam_carving_down!(mag, conrner_candiates)
+seam_carving_down!(mag, conrner_candiates, map)
+seam_carving_up!(mag, conrner_candiates, map)
 imshow(mag + binary)
