@@ -7,6 +7,6 @@ using ImageTransformations
 using CoordinateTransformations
 using Rotations
 
-img = Gray{Float64}.(load("data/checkerboard_example.jpg"))
-output = find_points(img,0.48,10)
+img = Gray{Float64}.(load("data/checkerboard2.png"))
+output = find_points(img,0.2,10)
 imshow(output)

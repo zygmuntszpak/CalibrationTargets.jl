@@ -32,4 +32,14 @@
         end
     end
     @test count == 48
+
+    img = Gray{Float64}.(load("data/radial_distortion.png"))
+    detected_points = detect_points(img,0.25,30)
+    count = 0;
+    for i in CartesianIndices(output)
+        if output[i] > 0
+            count += 1
+        end
+    end
+    @test count == 48
 end

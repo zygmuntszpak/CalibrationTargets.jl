@@ -92,7 +92,7 @@ function remove_after_carve( map::Dict{CartesianIndex{2}, Int64})
     conrner_candiates = Vector{CartesianIndex{2}}()
 
     for (key, value) in map
-        if value == target
+        if value >= target - 2      # This - 2 makes the function work for radial distortion, this may need to be changed for some other images
             push!(conrner_candiates, key)
         end
     end
