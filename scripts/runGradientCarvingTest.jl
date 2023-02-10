@@ -8,8 +8,8 @@ using CoordinateTransformations
 using Rotations
 
 #img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
-img2 = Gray{Float64}.(load("data/radial_distortion.png"))
-detected_points = detect_points(img2,0.25,30)
+img2 = Gray{Float64}.(load("data/test5.jpeg"))
+detected_points = detect_points(img2,0.37,10)
 imshow(detected_points)
 
 imshow(img2)
@@ -40,4 +40,5 @@ for point in differences
     y = point[2]
     detected_points[x,y] = 0
 end
-imshow(binary + mag)
+#imshow(binary + mag)
+imshow(detected_points)

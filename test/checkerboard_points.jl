@@ -42,4 +42,35 @@
         end
     end
     @test count == 48
+
+
+    img = Gray{Float64}.(load("data/test1.png"))
+    output = find_points(img,0.3405,10)
+    count = 0;
+    for i in CartesianIndices(output)
+        if output[i] > 0
+            count += 1
+        end
+    end
+    @test count == 60
+
+    img = Gray{Float64}.(load("data/test2.png"))
+    output = find_points(img,0.5,10)
+    count = 0;
+    for i in CartesianIndices(output)
+        if output[i] > 0
+            count += 1
+        end
+    end
+    @test count == 63
+
+    img = Gray{Float64}.(load("data/test4.png"))
+    output = find_points(img,0.4,10)
+    count = 0;
+    for i in CartesianIndices(output)
+        if output[i] > 0
+            count += 1
+        end
+    end
+    @test count == 54
 end
