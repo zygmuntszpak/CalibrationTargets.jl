@@ -9,7 +9,7 @@ using Rotations
 
 #img2 = Gray{Float64}.(load("data/checkerboard_example.jpg"))
 img2 = Gray{Float64}.(load("data/test5.jpeg"))
-detected_points = detect_points(img2,0.37,10)
+detected_points = detect_points(img2, 0.37, 10)
 imshow(detected_points)
 
 imshow(img2)

@@ -3,7 +3,7 @@ function pick_maximum_response(responses)
     maximum_response = zeros(nrow, ncol)
     for r = 1:nrow
         for c = 1:ncol
-            maximum_response[r,c] = maximum(responses[r,c,:]) 
+            maximum_response[r,c] = maximum(@view responses[r,c,:]) 
         end
     end
     return maximum_response 

@@ -9,6 +9,7 @@ using Rotations
 using ImageFiltering
 using Statistics
 using Interpolations
+using OffsetArrays
 
 include("create_blur.jl")
 include("checkerboard.jl")

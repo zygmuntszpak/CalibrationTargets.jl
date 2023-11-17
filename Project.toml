@@ -5,6 +5,7 @@ version = "0.1.0"
 
 [deps]
 CoordinateTransformations = "150eb455-5306-5404-9cee-2592286d6298"
+HistogramThresholding = "2c695a8d-9458-5d45-9878-1b8a99cf7853"
 ImageContrastAdjustment = "f332f351-ec65-5f6a-b3d1-319c6670881a"
 ImageFiltering = "6a3955dd-da59-5b1f-98d4-e7296123deb5"
 ImageShow = "4e3cecfd-b093-5904-9786-8bbb286a6a31"
